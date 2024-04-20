@@ -23,7 +23,7 @@ rm $file.tar.gz
 # move to position independent of version number
 # so Xcode project stays valid
 mv $file file_cmds
-(cd file_cmds ; patch -p1 < ../file_cmds.patch ; cd ..)
+# (cd file_cmds ; patch -p1 < ../file_cmds.patch ; cd ..)
 
 # get source for libutil:
 echo "Getting libutil"
@@ -33,7 +33,7 @@ mkdir $libutil
 tar xfz $libutil.tar.gz -C $libutil --strip 1
 rm $libutil.tar.gz
 mv $libutil libutil
-(cd libutil ; patch -p1 < ../libutil.patch ; cd ..)
+# (cd libutil ; patch -p1 < ../libutil.patch ; cd ..)
 
 # get source for libInfo:
 echo "Getting libinfo"
@@ -52,7 +52,7 @@ mkdir $shell
 tar xfz $shell.tar.gz -C $shell --strip 1
 rm $shell.tar.gz
 mv $shell shell_cmds
-(cd shell_cmds ; patch -p1 < ../shell_cmds.patch ; cd ..)
+# (cd shell_cmds ; patch -p1 < ../shell_cmds.patch ; cd ..)
 
 # get source for text_cmds:
 echo "Getting text_cmds"
@@ -62,7 +62,7 @@ mkdir $text
 tar xfz $text.tar.gz -C $text --strip 1
 rm $text.tar.gz
 mv $text text_cmds
-(cd text_cmds ; patch -p1 < ../text_cmds.patch ; cd ..)
+# (cd text_cmds ; patch -p1 < ../text_cmds.patch ; cd ..)
 
 # get source for BSD-tar: (not gnu-tar because licensing issues).
 # curl https://opensource.apple.com/tarballs/libarchive/$archive.tar.gz -O
@@ -71,7 +71,7 @@ mkdir $archive
 tar xfz $archive.tar.gz -C $archive --strip 1
 rm $archive.tar.gz
 mv $archive libarchive
-(cd libarchive ; patch -p1 < ../libarchive.patch ; cd ..)
+# (cd libarchive ; patch -p1 < ../libarchive.patch ; cd ..)
 
 # get source for curl. This one requires OpenSSH + libssl
 # curl https://opensource.apple.com/tarballs/curl/$curl.tar.gz -O
@@ -80,6 +80,6 @@ mkdir $curl
 tar xfz $curl.tar.gz -C $curl --strip 1
 rm $curl.tar.gz
 mv $curl curl
-(cd curl ; patch -p1 < ../curl.patch ; cd ..)
+# (cd curl ; patch -p1 < ../curl.patch ; cd ..)
 
 ls -all
